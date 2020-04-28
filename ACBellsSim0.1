@@ -1,0 +1,89 @@
+import time
+import random
+#ACBellsSim
+bells = 0
+loop = 1
+
+print ("Tom Nook: Hello, welcome to Animal Crossing Bells Sim, A text game about collecting and buying things with bells, lets get started")
+q1 = input ("In this game you will use text commands to interact with it, type 'Commands' and I will tell you the commands, Type Here: ")
+
+while q1 != "Commands":
+    
+    if q1 == "Commands":
+        print ("the commands")
+
+    else:
+        q1 = input ("Please Type 'Commands' Here: ")
+
+if q1 == "Commands":
+        print ("Tom Nook: Well done! You are learning quickly, any way here is list of the commands: ")
+
+print ("Say 'Nooks Cranny' to go to Nooks Cranny")
+print ("Say 'Search' to go looking for some bells")
+print ("Say 'Pockets' to view your pockets")
+print ("Say 'Bells' to see how many bells you have")
+
+print ("Tom Nook: I think thats all for now, Take 100 Bells and a radio to start you off to start you off")
+
+inven = ['Radio']
+bells = bells + 100
+
+print ("Pockets:", inven)
+print ("Bells:", bells)
+
+while loop == 1:
+    loopQ = input ("Type the command you want to use here: ")
+
+    if loopQ == "Search":
+        looprand = random.randint(1,1000)
+        bells = bells + looprand
+        print ("Tom Nook: You found",looprand,"bells, you now have",bells,"bells")
+
+    elif loopQ == "Bells":
+        print ("Tom Nook: You have",bells,"bells")
+
+    elif loopQ == "Pockets":
+        print ("Tom Nook: These are the things in your pockets:",inven)
+
+    elif loopQ == "Nooks Cranny":
+        if bells < 500:
+            print ("Tom Nook: Hmm, you dont seem to have enogh bells to buy anything, use the 'Search' Command to find bells")
+
+        else:
+            print ("Tom Nook: Welcome to Nooks Cranny, Here is our stock for today (Everything is 500 bells, type the number next to the item to buy it):")
+            print ("1 Apple")
+            print ("2: Nintendo Switch")
+            ncbuy = input ("What would you like to buy? ")
+            if ncbuy == "1":
+                print ("Tom Nook: An apple?, I cant blame you, they are delicoius, here you go!")
+                inven.append('Apple')
+                bells = bells - 500
+                print ("Tom Nook: These are the things in your pockets:",inven)
+                
+            elif ncbuy == "2":
+                print ("Tom Nook: A Nintendo Switch? , I cant blame you, they are the best console, here you go!")
+                inven.append('Nintendo Switch')
+                bells = bells - 500
+                print ("Tom Nook: These are the things in your pockets:",inven)
+
+            else:
+                print ("Tom Nook: Hmm, I cant find that item")
+                
+                
+            
+        
+    
+
+    else:
+        print ("Tom Nook: oops!, I cant find that command, here are the valid commands you can use:")
+        print ("Say 'Nooks Cranny' to go to Nooks Cranny")
+        print ("Say 'Search' to go looking for some bells")
+        print ("Say 'Pockets' to view your pockets")
+        print ("Say 'Bells' to see how many bells you have")
+        
+                   
+
+
+
+
+
